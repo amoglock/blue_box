@@ -1,4 +1,5 @@
 from fastapi import Depends
+from sqlalchemy import select, Result
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.core.schemas import CreateRaw
@@ -16,3 +17,9 @@ class RawCrud:
         self.session.add(raw)
         await self.session.commit()
         return raw
+
+    async def get_raw_list(self):
+        stmt = select(Raw).order_by(Raw.id)
+        result: Result = await self.session.execute(stmt)
+        raw = result.scalars().all()
+        return list(raw)
