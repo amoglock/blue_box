@@ -9,4 +9,3 @@ class CreateRaw(BaseModel):
 
 class Raw(CreateRaw):
     id: str
-
