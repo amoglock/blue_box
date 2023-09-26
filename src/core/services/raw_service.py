@@ -14,3 +14,5 @@ class RawService:
     async def post_raw(self, raw_in: CreateRaw) -> Raw:
         return await self.raw_crud.post_raw(raw_in=raw_in)
 
+    async def get_raw_list(self):
+        return await self.raw_crud.get_raw_list()
