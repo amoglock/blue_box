@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f47ecca-640b-4450-ad21-a329f565364d" name="Changes" comment="add comma at raw_router">
+    <list default="true" id="3f47ecca-640b-4450-ad21-a329f565364d" name="Changes" comment="change get storage method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/raw_storage/repository/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/repository/repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/raw_storage/routers/raw_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/routers/raw_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/raw_storage/service/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/service/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/raw_storage/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/models/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707251341395</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change get storage method">
+      <option name="closed" value="true" />
+      <created>1707252627875</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707252627875</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -182,6 +188,7 @@
     <MESSAGE value="add some methods" />
     <MESSAGE value="changes" />
     <MESSAGE value="add comma at raw_router" />
-    <option name="LAST_COMMIT_MESSAGE" value="add comma at raw_router" />
+    <MESSAGE value="change get storage method" />
+    <option name="LAST_COMMIT_MESSAGE" value="change get storage method" />
   </component>
 </project>
