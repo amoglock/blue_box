@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f47ecca-640b-4450-ad21-a329f565364d" name="Changes" comment="add uvicorn">
-      <change afterPath="$PROJECT_DIR$/src/raw_storage/service/service.py" afterDir="false" />
+    <list default="true" id="3f47ecca-640b-4450-ad21-a329f565364d" name="Changes" comment="add repository">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/raw_storage/repository/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/repository/repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/raw_storage/routers/raw_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/routers/raw_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/raw_storage/service/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/service/service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +103,31 @@
       <option name="project" value="LOCAL" />
       <updated>1707217506851</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add RawStorageService">
+      <option name="closed" value="true" />
+      <created>1707220347215</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707220347215</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add arrival_raw">
+      <option name="closed" value="true" />
+      <created>1707220367522</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707220367522</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add repository">
+      <option name="closed" value="true" />
+      <created>1707220405496</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707220405496</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -110,6 +135,9 @@
     <MESSAGE value="add structure" />
     <MESSAGE value="add README.md" />
     <MESSAGE value="add uvicorn" />
-    <option name="LAST_COMMIT_MESSAGE" value="add uvicorn" />
+    <MESSAGE value="add RawStorageService" />
+    <MESSAGE value="add arrival_raw" />
+    <MESSAGE value="add repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="add repository" />
   </component>
 </project>
