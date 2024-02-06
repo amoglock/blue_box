@@ -6,7 +6,7 @@ from src.raw_storage.models.models import RawResponse, Raw
 
 raw_router = APIRouter(
     prefix='/raw',
-    tags=['raw']
+    tags=['raw'],
 )
 
 
