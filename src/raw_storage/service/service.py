@@ -11,5 +11,5 @@ class RawStorageService:
     async def arrival_raw(self, raw: Raw):
         return await self.raw_repository.add_raw(raw)
 
-    async def get_storage(self):
-        return await self.raw_repository.get_storage()
+    async def get_storage(self, name=None):
+        return await self.raw_repository.get_storage(name)

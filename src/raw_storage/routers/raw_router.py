@@ -1,4 +1,6 @@
-from fastapi import APIRouter, Depends
+from typing import Annotated
+
+from fastapi import APIRouter, Depends, Path, Query
 
 from src.raw_storage.service.service import RawStorageService
 from src.raw_storage.models.models import RawResponse, Raw
@@ -16,5 +18,10 @@ async def arrival_raw(raw: Raw, raw_storage_service: RawStorageService = Depends
 
 
 @raw_router.get("/get_storage")
-async def get_storage(raw_storage_service: RawStorageService = Depends()):
+async def get_storage(
+        raw_storage_service: RawStorageService = Depends(),
+        name: Annotated[str | None, Query()] = None,
+):
+    if name:
+        return await raw_storage_service.get_storage(name)
     return await raw_storage_service.get_storage()
