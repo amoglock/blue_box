@@ -1,5 +1,3 @@
-from datetime import date
-
 from fastapi import Depends
 
 from src.raw_storage.models.models import IncomingRaw
@@ -10,7 +8,7 @@ class RawStorageService:
     def __init__(self, raw_repository: RawRepository = Depends()):
         self.raw_repository = raw_repository
 
-    async def arrival_raw(self, raw: IncomingRaw, prod_date: date, exp_date: date):
+    async def arrival_raw(self, raw: IncomingRaw):
         return await self.raw_repository.add_raw(raw)
 
     async def get_storage(self, name=None):
