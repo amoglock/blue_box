@@ -13,11 +13,11 @@ raw_router = APIRouter(
 )
 
 
-@raw_router.post("/arrival")
+@raw_router.post("/arrival", response_model=IncomingRaw, response_model_exclude_none=True)
 async def arrival_raw(
         raw: IncomingRaw,
-        prod_date: date,
-        exp_date: date,
+        prod_date: date = None,
+        exp_date: date = None,
         raw_storage_service: RawStorageService = Depends(),
 ):
     return await raw_storage_service.arrival_raw(raw, prod_date, exp_date)
