@@ -1,3 +1,4 @@
+from datetime import date
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Path, Query
@@ -15,9 +16,11 @@ raw_router = APIRouter(
 @raw_router.post("/arrival")
 async def arrival_raw(
         raw: IncomingRaw,
+        prod_date: date,
+        exp_date: date,
         raw_storage_service: RawStorageService = Depends(),
-                      ):
-    return await raw_storage_service.arrival_raw(raw)
+):
+    return await raw_storage_service.arrival_raw(raw, prod_date, exp_date)
 
 
 @raw_router.get("/get_storage")
