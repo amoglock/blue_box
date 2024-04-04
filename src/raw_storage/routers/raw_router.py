@@ -3,6 +3,7 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends, Path, Query
 
+from src.raw_storage.models.response_models import ResponseModel
 from src.raw_storage.service.service import RawStorageService
 from src.raw_storage.models.models import RawResponse, IncomingRaw
 
@@ -13,7 +14,7 @@ raw_router = APIRouter(
 )
 
 
-# @raw_router.post("/arrival", response_model=IncomingRaw, response_model_exclude_none=True)
+# @raw_router.post("/arrival", response_model=IncomingRaw)
 # async def arrival_raw(
 #         raw: IncomingRaw,
 #         raw_storage_service: RawStorageService = Depends(),
@@ -21,9 +22,9 @@ raw_router = APIRouter(
 #     return await raw_storage_service.arrival_raw(raw)
 
 
-@raw_router.get("/get_storage")
+@raw_router.get("/get_storage", response_model=ResponseModel)
 async def get_storage(
-        raw_storage_service: RawStorageService = Depends(),
+        raw_storage_service: Annotated[RawStorageService, Depends()],
         name: Annotated[
             str | None,
             Query(
