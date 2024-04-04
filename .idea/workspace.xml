@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f47ecca-640b-4450-ad21-a329f565364d" name="Changes" comment="add .idea to gitignore">
+    <list default="true" id="3f47ecca-640b-4450-ad21-a329f565364d" name="Changes" comment="test_get_storage is work!!!))))">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/raw_storage/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw_storage/models/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "amoglock"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/amoglock/blue_box.git",
+    "accountId": "8e48f319-a64c-4073-ace2-fe3901b161e0"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.cache/pypoetry/virtualenvs/blue-box-ybhguKfJ-py3.10/lib/python3.10/site-packages/pydantic/json_schema.py" root0="SKIP_INSPECTION" />
   </component>
@@ -40,6 +51,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_raw_storage.test_add_raw.executor": "Run",
+    "Python tests.Python tests for tests.raw_storage.test_raw_storage.executor": "Run",
+    "Python tests.Python tests in test_raw_storage.py.executor": "Run",
     "Python.service.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -48,10 +62,40 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/raw_storage" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/raw_storage" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Python tests for tests.raw_storage.test_raw_storage" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="blue_box" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.raw_storage.test_raw_storage&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for tests.raw_storage.test_raw_storage" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -232,7 +276,79 @@
       <option name="project" value="LOCAL" />
       <updated>1708256628370</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="change delivery_date type">
+      <option name="closed" value="true" />
+      <created>1708349721783</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708349721783</updated>
+    </task>
+    <task id="LOCAL-00023" summary="update gitignore">
+      <option name="closed" value="true" />
+      <created>1708349814716</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708349814716</updated>
+    </task>
+    <task id="LOCAL-00024" summary="move the folder with the tests to the root folder of the application">
+      <option name="closed" value="true" />
+      <created>1712248043532</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248043532</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update versions and install pytest">
+      <option name="closed" value="true" />
+      <created>1712248129520</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248129520</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add workspace.xml">
+      <option name="closed" value="true" />
+      <created>1712248342630</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248342630</updated>
+    </task>
+    <task id="LOCAL-00027" summary="change to get_storage function">
+      <option name="closed" value="true" />
+      <created>1712248464693</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248464693</updated>
+    </task>
+    <task id="LOCAL-00028" summary="change RawRepository">
+      <option name="closed" value="true" />
+      <created>1712248493858</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248493858</updated>
+    </task>
+    <task id="LOCAL-00029" summary="change RawService">
+      <option name="closed" value="true" />
+      <created>1712248516211</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248516211</updated>
+    </task>
+    <task id="LOCAL-00030" summary="test_get_storage is work!!!))))">
+      <option name="closed" value="true" />
+      <created>1712248546398</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248546398</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -252,6 +368,15 @@
     <MESSAGE value="create IncomingRaw" />
     <MESSAGE value="modify arrival_raw router" />
     <MESSAGE value="add .idea to gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add .idea to gitignore" />
+    <MESSAGE value="change delivery_date type" />
+    <MESSAGE value="update gitignore" />
+    <MESSAGE value="move the folder with the tests to the root folder of the application" />
+    <MESSAGE value="update versions and install pytest" />
+    <MESSAGE value="add workspace.xml" />
+    <MESSAGE value="change to get_storage function" />
+    <MESSAGE value="change RawRepository" />
+    <MESSAGE value="change RawService" />
+    <MESSAGE value="test_get_storage is work!!!))))" />
+    <option name="LAST_COMMIT_MESSAGE" value="test_get_storage is work!!!))))" />
   </component>
 </project>
