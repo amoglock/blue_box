@@ -13,19 +13,22 @@ raw_router = APIRouter(
 )
 
 
-@raw_router.post("/arrival", response_model=IncomingRaw, response_model_exclude_none=True)
-async def arrival_raw(
-        raw: IncomingRaw,
-        raw_storage_service: RawStorageService = Depends(),
-):
-    return await raw_storage_service.arrival_raw(raw)
+# @raw_router.post("/arrival", response_model=IncomingRaw, response_model_exclude_none=True)
+# async def arrival_raw(
+#         raw: IncomingRaw,
+#         raw_storage_service: RawStorageService = Depends(),
+# ):
+#     return await raw_storage_service.arrival_raw(raw)
 
 
 @raw_router.get("/get_storage")
 async def get_storage(
         raw_storage_service: RawStorageService = Depends(),
-        name: Annotated[str | None, Query()] = None,
+        name: Annotated[
+            str | None,
+            Query(
+                title="Query string",
+                description="Query string for searching for an item in the database by its name",
+            ),] = None,
 ):
-    if name:
-        return await raw_storage_service.get_storage(name)
-    return await raw_storage_service.get_storage()
+    return await raw_storage_service.get_storage(name)
