@@ -22,12 +22,15 @@ async def test_get_storage():
         response = await ac.get("/get_storage")
         assert response.status_code == 200
         assert response.json() == {
-            "data": "success",
-            "result": {}
+            "status": True,
+            "message": "success",
+            "data": {}
         }
 
         response = await ac.get("/get_storage?name=unknown_name")
+        print(response.json())
         assert response.json() == {
-            "data": "Item unknown_name not found",
-            "result": None
+            "status": False,
+            "message": "Item unknown_name not found",
+            "data": None
         }
