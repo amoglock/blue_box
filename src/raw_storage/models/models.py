@@ -11,6 +11,7 @@ class RawResponse(BaseModel):
 
 class IncomingRaw(RawResponse):
     incoming_amount: float | int
+    is_frozen: bool = Field(default=False)
     delivery_date: date = Field(default_factory=date.today)
     production_date: date | None = None
     expiration_date: date | None = None
