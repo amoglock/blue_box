@@ -14,12 +14,12 @@ raw_router = APIRouter(
 )
 
 
-# @raw_router.post("/arrival", response_model=IncomingRaw)
-# async def arrival_raw(
-#         raw: IncomingRaw,
-#         raw_storage_service: RawStorageService = Depends(),
-# ):
-#     return await raw_storage_service.arrival_raw(raw)
+@raw_router.post("/arrival", response_model=ResponseModel)
+async def arrival_raw(
+        raw_storage_service: Annotated[RawStorageService, Depends()],
+        raw: IncomingRaw,
+):
+    return await raw_storage_service.arrival_raw(raw)
 
 
 @raw_router.get("/get_storage", response_model=ResponseModel)
