@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 
+from src.database import Raw
 from src.raw_storage.models.models import IncomingRaw, RawResponse
 from src.raw_storage.models.response_models import ResponseModel
 from src.raw_storage.repository.repository import RawRepository
@@ -10,8 +11,9 @@ class RawStorageService:
         self.raw_repository = RawRepository()
         self.response = ResponseModel()
 
-    async def arrival_raw(self, db: Session, raw: IncomingRaw):
-        self.response.data = await self.raw_repository.add_raw(db, raw)
+    async def arrival_raw(self, raw: IncomingRaw):
+        incoming_raw = Raw(**raw.dict())
+        self.response.data = await self.raw_repository.add_raw(incoming_raw)
         self.response.message = f"Item {raw.title} in amount {raw.incoming_amount} added successful"
         return self.response
 
