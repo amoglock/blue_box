@@ -1,20 +1,24 @@
-from sqlalchemy import create_engine, MetaData
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from datetime import date
+
+from sqlmodel import Field, SQLModel, create_engine
 
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./raw.db"
+class Raw(SQLModel, table=True):
+    id: int | None = Field(primary_key=True, default=None)
+    title: str
+    group: str
+    supplier: str
+    is_frozen: bool
+    delivery_date: date
+    production_date: date
+    expiration_date: date
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+sqlite_file_name = "database.db"
+sqlite_url = f"sqlite:///{sqlite_file_name}"
 
-Base = declarative_base()
+engine = create_engine(sqlite_url, echo=True)
 
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+def create_db_and_tables():
+    SQLModel.metadata.create_all(engine)
