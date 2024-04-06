@@ -1,11 +1,19 @@
-from src.raw_storage.models.models import IncomingRaw
+from typing import Annotated
+
+from fastapi import Depends
+from sqlalchemy.orm import Session
+
+from src.database import SessionLocal
+from src.raw_storage.models.models import IncomingRaw, IncomingRawDB
 
 
 class RawRepository:
-    storage = {}
 
-    async def add_raw(self, raw: IncomingRaw) -> IncomingRaw:
-        self.storage[raw.title] = raw
+    @staticmethod
+    async def add_raw(db: Session, raw: IncomingRaw,) -> IncomingRaw:
+        db.add(raw)
+        db.commit()
+
         return raw
 
     async def get_storage(self, name):

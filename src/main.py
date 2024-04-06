@@ -6,15 +6,6 @@ from sqlalchemy.orm import Session
 
 app = FastAPI()
 
-src.models.Base.metadata.create_all(bind=engine)
-
-
-def get_db():
-    try:
-        db = SessionLocal()
-        yield db
-    finally:
-        db.close()
-
+src.database.Base.metadata.create_all(bind=engine)
 
 app.include_router(raw_router)
