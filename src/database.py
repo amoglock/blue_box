@@ -1,17 +1,4 @@
-from datetime import date
-
-from sqlmodel import Field, SQLModel, create_engine
-
-
-class Raw(SQLModel, table=True):
-    id: int | None = Field(primary_key=True, default=None)
-    title: str
-    group: str
-    supplier: str
-    is_frozen: bool
-    delivery_date: date
-    production_date: date
-    expiration_date: date
+from sqlmodel import SQLModel, create_engine
 
 
 sqlite_file_name = "database.db"
