@@ -1,22 +1,17 @@
-from typing import Annotated
+from sqlmodel import Session, select
 
-from fastapi import Depends
-from sqlalchemy.orm import Session
+from src.database import engine
 
-from src.database import engine, Raw
-from src.raw_storage.models.models import IncomingRaw
-from sqlmodel import Session
+from src.raw_storage.models.models import Raw
 
 
 class RawRepository:
 
     @staticmethod
-    async def add_raw(incoming_raw: Raw) -> Raw:
+    async def add_raw(incoming_raw: Raw) -> None:
         with Session(engine) as session:
             session.add(incoming_raw)
             session.commit()
-
-        return incoming_raw
 
     async def get_storage(self, name):
         """
@@ -25,5 +20,8 @@ class RawRepository:
         :return:
         """
         if name:
-            return self.storage.get(name)
-        return self.storage
+            with Session(engine) as session:
+                statement = select(Raw).where(Raw.title == name)
+                result = session.exec(statement).first()
+                return result
+        return {"data": "no data"}
