@@ -1,8 +1,4 @@
-from sqlalchemy.orm import Session
-
-from src.database import Raw
-from src.raw_storage.models.models import IncomingRaw, RawResponse
-from src.raw_storage.models.response_models import ResponseModel
+from src.raw_storage.models.models import IncomingRaw, RawResponse, ResponseModel, Raw
 from src.raw_storage.repository.repository import RawRepository
 
 
@@ -12,9 +8,12 @@ class RawStorageService:
         self.response = ResponseModel()
 
     async def arrival_raw(self, raw: IncomingRaw):
-        incoming_raw = Raw(**raw.dict())
-        self.response.data = await self.raw_repository.add_raw(incoming_raw)
+        incoming_raw = Raw.model_validate(raw)
+        await self.raw_repository.add_raw(incoming_raw)
+
+        self.response.data = raw
         self.response.message = f"Item {raw.title} in amount {raw.incoming_amount} added successful"
+
         return self.response
 
     async def get_storage(self, name):
@@ -26,8 +25,9 @@ class RawStorageService:
             return self.response
 
         if name:
-            self.response.data = RawResponse(**item_from_base.model_dump())
+            self.response.data = item_from_base
             return self.response
 
+        self.response.message = "No item for search"
         self.response.data = item_from_base
         return self.response
