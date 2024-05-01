@@ -26,8 +26,8 @@ class RawRepository:
         :return:
         """
         if name:
-            with Session(engine) as session:
+            with Session(self.engine) as session:
                 statement = select(Raw).where(Raw.title == name)
                 result = session.exec(statement).first()
-                return result
+            return result
         return {"data": "no data"}
