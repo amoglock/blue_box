@@ -9,9 +9,13 @@ class RawRepository:
     def __init__(self, eng: engine):
         self.engine = eng
 
-    @staticmethod
-    async def add_raw(incoming_raw: Raw) -> None:
-        with Session(engine) as session:
+    async def add_raw(self, incoming_raw: Raw) -> None:
+        """
+
+        :param incoming_raw:
+        :return:
+        """
+        with Session(self.engine) as session:
             session.add(incoming_raw)
             session.commit()
 
