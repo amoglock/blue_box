@@ -1,12 +1,11 @@
-from src.database import engine
 from src.raw_storage.models.models import IncomingRaw, ResponseModel, Raw
 from src.raw_storage.repository.repository import RawRepository
 
 
 class RawStorageService:
     def __init__(self):
-        self.raw_repository = RawRepository(eng=engine)
-        self.response = ResponseModel()
+        self.raw_repository = RawRepository()
+        self.response = ResponseModel
 
     async def arrival_raw(self, raw: IncomingRaw):
         incoming_raw = Raw.model_validate(raw)
