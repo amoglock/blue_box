@@ -19,7 +19,7 @@ class RawRepository:
             session.add(incoming_raw)
             session.commit()
 
-    async def get_storage(self, name):
+    async def get_storage(self, name) -> Raw | dict[str, str]:
         """
 
         :param name:
