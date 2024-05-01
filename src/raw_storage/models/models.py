@@ -9,6 +9,7 @@ class Raw(SQLModel, table=True):
     title: str
     group: str
     supplier: str
+    incoming_amount: int
     is_frozen: bool
     delivery_date: date
     production_date: date
