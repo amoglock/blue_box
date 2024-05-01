@@ -6,8 +6,8 @@ from src.raw_storage.models.models import Raw
 
 
 class RawRepository:
-    def __init__(self, eng: engine):
-        self.engine = eng
+    def __init__(self):
+        self.engine = engine
 
     async def add_raw(self, incoming_raw: Raw) -> None:
         """
