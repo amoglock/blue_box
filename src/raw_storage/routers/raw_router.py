@@ -11,7 +11,11 @@ raw_router = APIRouter(
 )
 
 
-@raw_router.post("/arrival", response_model=ResponseModel, response_model_exclude={"data": "id"})
+@raw_router.post("/arrival",
+                 response_model=ResponseModel,
+                 response_model_exclude={"data": "id"},
+                 description="Add raw element into the base",
+                 )
 async def arrival_raw(
         raw_storage_service: Annotated[RawStorageService, Depends()],
         raw: IncomingRaw,
@@ -19,7 +23,11 @@ async def arrival_raw(
     return await raw_storage_service.arrival_raw(raw)
 
 
-@raw_router.get("/get_storage", response_model=ResponseModel, response_model_exclude={"data": "id"})
+@raw_router.get("/get_storage",
+                response_model=ResponseModel,
+                response_model_exclude={"data": "id"},
+                description="Get a raw from the base",
+                )
 async def get_storage(
         raw_storage_service: Annotated[RawStorageService, Depends()],
         name: Annotated[
