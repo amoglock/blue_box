@@ -13,21 +13,30 @@ class RawRepository:
         """
 
         :param incoming_raw:
-        :return:
+        :return: None
         """
         with Session(self.engine) as session:
             session.add(incoming_raw)
             session.commit()
 
-    async def get_storage(self, name) -> Raw | dict[str, str]:
+    async def get_storage(self, name: str, group) -> Raw | dict[str, str]:
         """
 
+        :param group:
         :param name:
         :return:
         """
         if name:
             with Session(self.engine) as session:
-                statement = select(Raw).where(Raw.title == name)
+                statement = select(group).where(group.title == name)
                 result = session.exec(statement).first()
             return result
         return {"data": "no data"}
+
+    async def delivery_raw(self, name: str, amount: int | float):
+        """
+
+        :param name:
+        :param amount:
+        :return:
+        """
