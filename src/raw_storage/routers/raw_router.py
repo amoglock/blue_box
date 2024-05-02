@@ -1,14 +1,22 @@
+from enum import Enum
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query
+from sqlmodel import SQLModel
 
 from src.raw_storage.service.service import RawStorageService
-from src.raw_storage.models.models import IncomingRaw, ResponseModel
+from src.raw_storage.models.models import IncomingRaw, ResponseModel, Vegetables, Meat, Gastronomy
 
 raw_router = APIRouter(
     prefix='/raw',
     tags=['raw'],
 )
+
+
+class Groups(str, Enum):
+    vegetables = "Vegetables"
+    meat = "Meat"
+    gastronomy = "Gastronomy"
 
 
 @raw_router.post("/arrival",
@@ -30,6 +38,7 @@ async def arrival_raw(
                 )
 async def get_storage(
         raw_storage_service: Annotated[RawStorageService, Depends()],
+        group: Groups,
         name: Annotated[
             str | None,
             Query(
@@ -37,4 +46,4 @@ async def get_storage(
                 description="Query string for searching for an item in the database by its name",
             ),] = None,
 ):
-    return await raw_storage_service.get_storage(name)
+    return await raw_storage_service.get_storage(name, group)
