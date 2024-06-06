@@ -12,7 +12,7 @@ class RawStorageService:
         # TODO: It's boolshit)))). self.groups needs to create not from hardcoded dict.
         self.groups = {"Vegetables": Vegetables, "Meat": Meat, "Gastronomy": Gastronomy}
 
-    async def arrival_raw(self, raw: IncomingRaw):
+    async def arrival_raw(self, raw: IncomingRaw) -> ResponseModel:
         # TODO: Add try-except for KeyError
         incoming_raw = self.groups[raw.group.title()].model_validate(raw)
         await self.raw_repository.add_raw(incoming_raw)
@@ -22,8 +22,7 @@ class RawStorageService:
 
         return self.response
 
-    async def get_storage(self, name: str, group: str):
-        item_from_base = await self.raw_repository.get_storage(name, self.groups[group.title()])
+    async def get_storage(self, name: str, group: str) -> ResponseModel:
 
         if name and not item_from_base:
             self.response.status = False
