@@ -40,10 +40,11 @@ async def get_storage(
         raw_storage_service: Annotated[RawStorageService, Depends()],
         group: Groups,
         name: Annotated[
-            str | None,
+            str,
             Query(
                 title="Query string",
                 description="Query string for searching for an item in the database by its name",
-            ),] = None,
+            ),
+        ],
 ):
     return await raw_storage_service.get_storage(name, group)
