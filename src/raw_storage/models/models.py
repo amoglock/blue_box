@@ -4,39 +4,6 @@ from pydantic import BaseModel
 from sqlmodel import SQLModel, Field
 
 
-class Vegetables(SQLModel, table=True):
-    id: int | None = Field(primary_key=True, default=None)
-    title: str
-    supplier: str
-    incoming_amount: float
-    is_frozen: bool
-    delivery_date: date
-    production_date: date
-    expiration_date: date
-
-
-class Meat(SQLModel, table=True):
-    id: int | None = Field(primary_key=True, default=None)
-    title: str
-    supplier: str
-    incoming_amount: float
-    is_frozen: bool
-    delivery_date: date
-    production_date: date
-    expiration_date: date
-
-
-class Gastronomy(SQLModel, table=True):
-    id: int | None = Field(primary_key=True, default=None)
-    title: str
-    supplier: str
-    incoming_amount: float
-    is_frozen: bool
-    delivery_date: date
-    production_date: date
-    expiration_date: date
-
-
 class Raw(SQLModel):
     id: int | None = Field(primary_key=True, default=None)
     title: str
@@ -46,6 +13,18 @@ class Raw(SQLModel):
     delivery_date: date
     production_date: date
     expiration_date: date
+
+
+class Vegetables(Raw, table=True):
+    pass
+
+
+class Meat(Raw, table=True):
+    pass
+
+
+class Gastronomy(Raw, table=True):
+    pass
 
 
 class RawResponse(SQLModel):
