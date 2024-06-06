@@ -44,4 +44,4 @@ class IncomingRaw(RawResponse):
 class ResponseModel(BaseModel):
     status: bool = Field(default=True)
     message: str | None = "success"
-    data: IncomingRaw | dict = {}
+    data: Raw | None = None
