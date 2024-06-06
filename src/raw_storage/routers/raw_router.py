@@ -42,7 +42,6 @@ async def get_storage(
         name: Annotated[
             str,
             Query(
-                title="Query string",
                 description="Query string for searching for an item in the database by its name",
             ),
         ],
