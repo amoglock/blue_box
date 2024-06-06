@@ -24,16 +24,10 @@ class RawStorageService:
 
     async def get_storage(self, name: str, group: str) -> ResponseModel:
 
-        if name and not item_from_base:
+        self.response.data = await self.raw_repository.get_storage(name.lower(), self.groups[group])
+
+        if self.response.data is None:
             self.response.status = False
             self.response.message = f"Item {name} not found"
-            return self.response
 
-        if name:
-            # self.response.data = IncomingRaw.model_validate(item_from_base)
-            print(item_from_base)
-            return self.response
-
-        self.response.message = "No item for search"
-        self.response.data = item_from_base
         return self.response
