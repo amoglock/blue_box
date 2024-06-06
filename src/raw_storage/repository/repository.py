@@ -26,12 +26,11 @@ class RawRepository:
         :param name:
         :return:
         """
-        if name:
-            with Session(self.engine) as session:
-                statement = select(group).where(group.title == name)
-                result = session.exec(statement).first()
-            return result
-        return {"data": "no data"}
+
+        with Session(self.engine) as session:
+            statement = select(group).where(group.title == name)
+            result = session.exec(statement).first()
+        return result
 
     async def delivery_raw(self, name: str, amount: int | float):
         """
