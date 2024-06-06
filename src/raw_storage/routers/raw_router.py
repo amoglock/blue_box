@@ -2,10 +2,9 @@ from enum import Enum
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query
-from sqlmodel import SQLModel
 
 from src.raw_storage.service.service import RawStorageService
-from src.raw_storage.models.models import IncomingRaw, ResponseModel, Vegetables, Meat, Gastronomy
+from src.raw_storage.models.models import IncomingRaw, ResponseModel
 
 raw_router = APIRouter(
     prefix='/raw',
