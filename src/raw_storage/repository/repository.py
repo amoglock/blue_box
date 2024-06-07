@@ -32,7 +32,7 @@ class RawRepository:
             result = session.exec(statement).first()
         return result
 
-    async def delivery_raw(self, name: str, amount: int | float):
+    async def delivery_raw(self, name: str, amount: float):
         """
 
         :param name:
