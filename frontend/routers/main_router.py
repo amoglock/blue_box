@@ -10,5 +10,9 @@ main_router = APIRouter(
 templates = Jinja2Templates(directory="frontend/templates")
 
 @main_router.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
+async def login_page(request: Request):
+    return templates.TemplateResponse("login_page.html", {"request": request})
+
+@main_router.get("/index", response_class=HTMLResponse)
+async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
