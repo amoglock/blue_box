@@ -1,81 +1,11 @@
-<html>
-    <head>
-        <script>
-
-        </script>
-        <link rel="icon" href="/frontend/favicon.png" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-        <title>Blue box</title>
-    </head>
-    <body>
-        <div class="user-entry">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button>Login</button>
-        </div>
-        <div class="content">
-            <div class="content-header russo-one-regular">
-                <div class="company-name">BLUE BOX</div>
-                <div class="content-header-text">
-                        Blue box it is a platform for managing and optimizing your production.
-                </div>
-                <div class="red-bar"></div>
-            </div>
-            
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+</head>
+<body>
+    <h1>Congrans! You are in the Box!</h1>
+</body>
 </html>
-
-<style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .russo-one-regular {
-            font-family: "Russo One", serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-        
-        .user-entry {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 5vh;
-            position: absolute;
-            top: 5%;
-            left: 50%;
-            transform: translateX(-50%); 
-            gap: 5px;
-        }
-        .content {
-            margin-top: 70vh;
-            transform: translateX(-100%);
-            animation: slideIn 0.5s forwards; 
-        }
-        @keyframes slideIn {
-                    to {
-                        transform: translateX(0); /* Перемещаем блок на его исходное положение */
-                    }
-                }
-
-        .company-name, .content-header-text {
-            font-size: 48px;
-            padding-left: 50px;
-            color: #9DB1CC;
-            opacity: 0.9;
-        }
-
-        .content-header-text {
-            font-size: 24px;
-        }
-
-        .red-bar {
-            width: 90%;
-            height: 20px;
-            background-color: red;
-        }
-</style>
