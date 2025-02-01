@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <title>You are in the Box</title>
-</head>
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', path='styles/index_styles.css') }}">
+{% endblock %}
+{% block body %}
 <body>
     <div class="logo">
         <p class="russo-one-regular">BLUEBOX</p>
     </div>
     <div class="workday-info">
-
+        <div class="username">Иван Иванов</div>
+        <div class="today-date">01.01.2025</div>
     </div>
     <div class="partition">
-
+        
     </div>
     <div class="menu">
         <p>menu</p>
@@ -26,57 +22,4 @@
     </ul>
     </div>
 </body>
-</html>
-
-<style>
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    
-    body {
-        background-color: #fff;
-    }
-    .logo {
-    height: 50px;
-    width: 100%;
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-
-    .russo-one-regular {
-    font-family: "Russo One", serif;
-    font-weight: 400;
-    font-size: 48px;
-    font-style: normal;
-    color: #f9f9f9;
-}
-
-    .dropdown-menu {
-            list-style-type: none;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            display: none; /* Скрыто по умолчанию */
-        }
-
-        .menu:hover .dropdown-menu {
-            display: block; /* Показываем меню при наведении */
-        }
-
-        .dropdown-menu li {
-            padding: 8px 12px;
-        }
-
-        .dropdown-menu li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .dropdown-menu li a:hover {
-            background-color: #ddd;
-        }
-</style>
+{% endblock %}
