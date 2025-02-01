@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <title>You are in the Box</title>
 </head>
 <body>
     <div class="logo">
-        <p>BLUEBOX</p>
+        <p class="russo-one-regular">BLUEBOX</p>
     </div>
     <div class="workday-info">
 
@@ -16,7 +19,11 @@
 
     </div>
     <div class="menu">
-
+        <p>menu</p>
+    <ul class="dropdown-menu">
+        <li><a href="#plan">План</a></li>
+        <li><a href="#personnel">Персонал</a></li>
+    </ul>
     </div>
 </body>
 </html>
@@ -31,4 +38,45 @@
     body {
         background-color: #fff;
     }
+    .logo {
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .russo-one-regular {
+    font-family: "Russo One", serif;
+    font-weight: 400;
+    font-size: 48px;
+    font-style: normal;
+    color: #f9f9f9;
+}
+
+    .dropdown-menu {
+            list-style-type: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            display: none; /* Скрыто по умолчанию */
+        }
+
+        .menu:hover .dropdown-menu {
+            display: block; /* Показываем меню при наведении */
+        }
+
+        .dropdown-menu li {
+            padding: 8px 12px;
+        }
+
+        .dropdown-menu li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #ddd;
+        }
 </style>
