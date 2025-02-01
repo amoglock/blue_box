@@ -1,0 +1,59 @@
+body {
+    background-color: #B8B799;
+}
+
+.logo {
+height: 50px;
+width: 100%;
+background-color:#4169E1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.russo-one-regular {
+font-family: "Russo One", serif;
+font-weight: 400;
+font-size: 48px;
+font-style: normal;
+color: #f9f9f9;
+}
+
+.workday-info {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.username {
+    margin-left: 50px;
+}
+
+.today-date {
+    margin-right: 50px;
+}
+
+.dropdown-menu {
+        list-style-type: none;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        display: none; /* Скрыто по умолчанию */
+    }
+
+    .menu:hover .dropdown-menu {
+        display: block; /* Показываем меню при наведении */
+    }
+
+    .dropdown-menu li {
+        padding: 8px 12px;
+    }
+
+    .dropdown-menu li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #ddd;
+    }
