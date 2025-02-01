@@ -46,3 +46,28 @@
     height: 20px;
     background-color: red;
 }
+
+.dropdown-menu {
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.menu:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ddd;
+}
