@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+{% endblock %}
+{% block body %}
+    <body>
+        <div class="user-entry russo-one-regular">
+            <div>USERNAME</div>
+            <input type="text">
+            <div>PASSWORD</div>
+            <input type="password">
+            <div style="cursor: pointer;" onclick="window.location.href='index'">LOGIN</div>
+        </div>
+        <div class="content">
+            <div class="content-header russo-one-regular">
+                <div class="company-name">BLUE BOX</div>
+                <div class="content-header-text">
+                        Blue box it is a platform for managing and optimizing your production.
+                </div>
+                <div class="red-bar"></div>
+            </div>
+            
+        </div>
+    </body>
+{% endblock %}

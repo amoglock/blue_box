@@ -1,0 +1,73 @@
+
+.russo-one-regular {
+    font-family: "Russo One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.user-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%); 
+    gap: 5px;
+    font-size: 12px;
+    color: #9DB1CC
+}
+.content {
+    margin-top: 70vh;
+    user-select: none;
+    transform: translateX(-100%);
+    animation: slideIn 0.5s forwards; 
+}
+@keyframes slideIn {
+            to {
+                transform: translateX(0); /* Перемещаем блок на его исходное положение */
+            }
+        }
+
+.company-name, .content-header-text {
+    font-size: 48px;
+    padding-left: 50px;
+    color: #9DB1CC;
+    opacity: 0.9;
+}
+
+.content-header-text {
+    font-size: 24px;
+}
+
+.red-bar {
+    width: 90%;
+    height: 20px;
+    background-color: red;
+}
+
+.dropdown-menu {
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.menu:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ddd;
+}
