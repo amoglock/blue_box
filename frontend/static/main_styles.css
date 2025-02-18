@@ -1,0 +1,50 @@
+:root {
+    --primary-color: #11121a;
+    --hover-color: #272832;
+    --accent-color: #0071FF;
+    --text-color: #c9c9c9;
+}
+html {
+    color: var(--text-color);
+}
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--primary-color);
+}
+main {
+    padding: min(5em, 7%);
+}
+main p {
+    margin-top: .35em;
+}
+nav{
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--hover-color);
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav .home-li {
+    margin-right: auto;
+}
+nav li {
+    display: flex;
+}
+nav a {
+    display: flex;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1em 2em;
+    transition: background-color 150ms ease;
+}
+nav a:hover {
+    background-color: var(--hover-color);
+}
+nav a.active-link {
+    border-bottom: 2px solid var(--text-color);
+}
+nav a.accent-link {
+    background-color: var(--accent-color);
+}
