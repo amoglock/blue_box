@@ -53,6 +53,6 @@ async def get_storage(
                 )
 async def get_all_storage(
     raw_storage_service: Annotated[RawStorageService, Depends()],
-):
+):  
     return await raw_storage_service.get_all_storage()
     

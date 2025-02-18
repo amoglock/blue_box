@@ -1,4 +1,5 @@
-from sqlmodel import Session, select
+from sqlalchemy import literal
+from sqlmodel import Session, select, union_all
 
 from src.database import engine
 
