@@ -8,6 +8,7 @@ from src.orders_maker.routers.order_router import order_router
 from src.product_maker.routers.product_router import product_router
 from src.raw_storage.routers.raw_router import raw_router
 from src.database import create_db_and_tables
+from src.users.database import create_users_db_and_tables
 
 app = FastAPI()
 
@@ -16,6 +17,7 @@ static_path = Path(__file__).parent.parent / "frontend" / "static"
 app.mount("/static", StaticFiles(directory=static_path), name="static")
 
 create_db_and_tables()
+# create_users_db_and_tables()
 
 app.include_router(main_router)
 app.include_router(raw_router)
