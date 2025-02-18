@@ -21,6 +21,10 @@ class RawStorageService:
         self.response.message = f"Item {raw.title} in amount {raw.incoming_amount} added successful"
 
         return self.response
+    
+    async def get_all_storage(self) -> ResponseModel:
+        self.response.data = await self.raw_repository.get_all_storage()
+        return self.response
 
     async def get_storage(self, name: str, group: str) -> ResponseModel:
 
