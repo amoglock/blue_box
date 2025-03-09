@@ -1,4 +1,5 @@
-from src.raw_storage.models.models import IncomingRaw, ResponseModel, Vegetables, Meat, Gastronomy
+from src.raw_storage.models.database_models import Vegetables, Meat, Gastronomy
+from src.raw_storage.models.models import ResponseModel, IncomingRaw
 from src.raw_storage.repository.repository import RawRepository
 
 

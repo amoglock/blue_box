@@ -1,6 +1,6 @@
 from sqlmodel import Session, select
 from src.database import engine
-from src.raw_storage.models.models import Meat, Raw, Vegetables
+from src.raw_storage.models.database_models import Meat, Raw, Vegetables
 from src.semiproducts.models.models import Semiproduct
 
 class SemiproductRepository:
