@@ -1,5 +1,4 @@
-from src.raw_storage.models.database_models import Vegetables, Meat, Gastronomy
-from src.raw_storage.models.models import ResponseModel, IncomingRaw
+from src.raw_storage.models.models import Raw, ResponseModel, IncomingRaw
 from src.raw_storage.repository.repository import RawRepository
 
 
@@ -10,8 +9,12 @@ class RawStorageService:
     def __init__(self):
         self.raw_repository = RawRepository()
         self.response = ResponseModel()
-        # TODO: It's boolshit)))). self.groups needs to create not from hardcoded dict.
-        self.groups = {"Vegetables": Vegetables, "Meat": Meat, "Gastronomy": Gastronomy}
+        self.groups = self._get_all_raw_models()
+
+    async def _get_all_raw_models(self) -> dict[str, Raw]:
+        """Get all models from Raw"""
+        groups = dict((subclass.__name__, subclass) for subclass in Raw.__subclasses__())
+        return groups
 
     async def arrival_raw(self, raw: IncomingRaw) -> ResponseModel:
         # TODO: Add try-except for KeyError
