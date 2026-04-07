@@ -1,9 +1,7 @@
 import pytest
 from httpx import AsyncClient, ASGITransport
 
-from src.main import app
-from src.raw_storage.models.models import IncomingRaw
-from src.raw_storage.repository.repository import RawRepository
+from backend.src.main import app
 
 test_raw = {
     "title": "Dragon Fruit",
