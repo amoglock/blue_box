@@ -1,25 +1,27 @@
-from pathlib import Path
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
 
-from frontend.routers.main_router import main_router
-from backend.src.orders_maker.routers.order_router import order_router
-from backend.src.product_maker.routers.product_router import product_router
-from backend.src.semiproducts.routers.semiproduct_router import semiproduct_router
-from backend.src.raw_storage.routers.raw_router import raw_router
-from backend.src.database import create_db_and_tables
+from .api.v1 import products
 
-app = FastAPI()
 
-static_path = Path(__file__).parent.parent / "frontend" / "static"
+app = FastAPI(title="Production Management API")
 
-app.mount("/static", StaticFiles(directory=static_path), name="static")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Vite dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-create_db_and_tables()
 
-app.include_router(main_router)
-app.include_router(raw_router)
-app.include_router(order_router)
-app.include_router(product_router)
-app.include_router(semiproduct_router)
+# create_db_and_tables()
+
+app.include_router(products.router)
+# app.include_router(orders.router)
+# app.include_router(raw_storage.router)
+# app.include_router(semiproducts.router)
+
+@app.get("/api/health")
+async def health_check():
+    return {"status": "ok"}
