@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<body>
+    <style>
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 20px rgba(160, 158, 158, 0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dddddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+                <th>Вид</th>
+                <th>Название</th>
+                <th>Количество</th>
+                <th>Дата доставки</th>
+                <th>Дата истечения</th>
+                <th>ID</th>
+                <th>Поставщик</th>
+                <th>Заморожено</th>
+                <th>Дата производства</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group, items in data.data.items() %}
+                {% for item in items %}
+                    <tr>
+                        <td>{{ group }}</td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.incoming_amount }}</td>
+                        <td>{{ item.delivery_date }}</td>
+                        <td>{{ item.expiration_date }}</td>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.supplier }}</td>
+                        <td>{{ item.is_frozen }}</td>
+                        <td>{{ item.production_date }}</td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% endblock %}
+</html>
+
+<style>
+</style>s
