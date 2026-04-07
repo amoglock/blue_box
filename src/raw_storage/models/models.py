@@ -14,19 +14,6 @@ class Raw(SQLModel):
     production_date: date
     expiration_date: date
 
-
-class Vegetables(Raw, table=True):
-    pass
-
-
-class Meat(Raw, table=True):
-    pass
-
-
-class Gastronomy(Raw, table=True):
-    pass
-
-
 class RawResponse(SQLModel):
     title: str = Field(description="Name of raw", nullable=False, index=True)
     group: str = Field(description="Group name of raw type", nullable=False)

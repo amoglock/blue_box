@@ -46,3 +46,13 @@ async def get_storage(
         ],
 ):
     return await raw_storage_service.get_storage(name, group)
+
+
+@raw_router.get("/get_all",
+                response_model=ResponseModel,
+                )
+async def get_all_storage(
+    raw_storage_service: Annotated[RawStorageService, Depends()],
+):
+    return await raw_storage_service.get_all_storage()
+    

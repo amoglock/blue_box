@@ -19,6 +19,28 @@ class RawRepository:
             session.add(incoming_raw)
             session.commit()
 
+    async def get_specific_raw(self):
+        """
+        """
+        with Session(self.engine) as session:
+            statement = select(Raw).where(title='beef')
+            result = session.exec(statement)    
+            return result               
+
+    async def get_all_storage(self) -> dict:
+        """
+        """
+        with Session(self.engine) as session:
+            raw_subclasses = Raw.__subclasses__()
+            result = {}
+            
+            for model in raw_subclasses:
+                statement = select(model)
+                records = session.exec(statement).all()
+                result[model.__name__] = records
+                
+            return result       
+
     async def get_storage(self, name: str, group: Raw) -> Raw | dict[str, str]:
         """
 
@@ -39,3 +61,5 @@ class RawRepository:
         :param amount:
         :return:
         """
+        ...
+
